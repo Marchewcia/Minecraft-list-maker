@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Page- MC list maker</title>
+
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="jslogic/websiteLogic.js"></script>
+    </head>
+    <body onload="loadOrNew()">
+        <div id="nav">
+            
+        </div>
+        <div id="main">
+            <div class="list">
+                <div class="num">
+                    No.
+                </div>
+                <div class="mname">
+                    Block/Item name
+                </div>
+                <div class="amount">
+                    Total amount(Stacks, Blocks)
+                </div>
+                <div class="del">
+                    Delete item
+                </div>
+            </div>
+        </div>
+        <div id="addcontainer">
+            a
+            <button id="add" onclick="addNewColumn()">Add new item</button>
+        </div>
+    </body>
+</html>
