@@ -7,20 +7,5 @@ function loadOrNew(){
 
 function addNewColumn(){
     count++;
-
-    //change id'd, generatable id for each column
-    main.innerHTML += '<div class="list"';
-    main.innerHTML += '<div class="num"';
-    main.innerHTML += count;
-    main.innerHTML += '</div>';
-    main.innerHTML += '<div class="mname">';
-    main.innerHTML += 'Block/Item name';
-    main.innerHTML += '</div>';
-    main.innerHTML += '<div class="amount">';
-    main.innerHTML += 'Total amount(Stacks, Blocks)';
-    main.innerHTML += '</div>';
-    main.innerHTML += '<div class="del">';
-    main.innerHTML += 'Delete item';
-    main.innerHTML += '</div>';
-    main.innerHTML += '</div>';
+    main.innerHTML += '<div class="row" id="row' + count + '"><div class="num">No.</div><div class="mname">Block/Item name</div><div class="amount">Total amount(Stacks, Blocks)</div><div class="del">Delete item</div></div></div>';
 }

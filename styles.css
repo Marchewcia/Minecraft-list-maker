@@ -6,28 +6,32 @@
 #main {
     align-items: center;
     display: flex;
+    flex-direction: column;
 }
 
-.list {
+.row {
     display: flex;
     flex-direction: row;
     border: solid black 3px;
+    border-top: solid black 1.5px;
+    border-bottom: solid black 1.5px;
     width: 70%;
     margin-left: 15%;
 }
 
 #add {
-    width: 30%;
-    height: 7%;
+    width: 20%;
+    height:11%;
     font-size: larger;
     margin-top: 1%;
     display: flex;
     text-align: center;
+    justify-content: center;
 }
 
 #addcontainer {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .num, .mname, .amount {
