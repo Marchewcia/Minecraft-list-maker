@@ -13,6 +13,7 @@ function addNewColumn(){
 
 function deleteColumn(a){
     a.remove();
+    saveData();
     othertabs = true;
     tabindex = 1;
     tabiterator = 1;
@@ -43,3 +44,13 @@ function deleteColumn(a){
         }
     }
 }
+
+function saveData(){
+    rowData = document.getElementsByClassName("itemName");
+
+    // for(i = )
+}
+
+// function loadData(){
+//     for(i = 0; i < rowData)
+// }
