@@ -1,17 +1,80 @@
 function loadOrNew(){
     input = true; //temp
-    if(input){
-        count = 1;
+    if(input){//true:new
+        count = 2;
+        initializeFirstMenu();
     }
 }
 
+function initializeFirstMenu(){
+    tempFirstMenu = document.getElementById("firstRow");
+    firstMenu = tempFirstMenu.cloneNode(false);
+    blockname = ["dirt", "stone", "cobblestone", "oak_log", "oak_planks"];
+    for(i = 0; i < blockname.length; i++){
+        itemId = "item" + blockname[i].charAt(0).toUpperCase() + blockname[i].slice(1);
+        firstMenu.appendChild(document.createElement("select"));
+        firstMenu.getElementsByTagName("select")[i].setAttribute("id", itemId);
+        firstMenu.getElementsByTagName("select")[i].setAttribute("value", blockname[i]);
+        firstMenu.getElementsByTagName("select")[i].innerHTML = blockname[i];
+        if(i == 0){
+            firstMenu.getElementsByTagName("select")[i].setAttribute("selected", "");
+        }
+    //     optiontemp = option;
+    //     optiontemp.setAttribute("value", blockname[i])
+    //     optiontemp.innerHTML = blockname[i];
+    //     blockSelector.appendChild(optiontemp);
+    // 
+    }
+    document.getElementById("firstRow").remove();
+    document.getElementsByClassName("mname")[1].appendChild(firstMenu);
+}
+
 function addNewColumn(){
-    //rewrite with document.createElement();
-    main.innerHTML += '<div class="row" id="row' + count + '"><div class="num">' + count + '</div><div class="mname">Block/Item name</div><div class="amount">Total amount(Stacks, Blocks)</div><div class="del"><button class="buttonDelete" onclick="deleteColumn(row' + count + ')">Delete element</button></div></div></div>';
+    oldRow = document.getElementById("row1");
+    newRow = oldRow.cloneNode(true);
+    // console.log(newRow)
+
+
+    // item = dataTransferItemList();
+    // console.log(count);
+    currentRow = "row" + count;
+    // console.log(currentRow);
+
+    // fragment = document.createDocumentFragment();
+    // newRow = fragment.appendChild(document.createElement("div"));
+    // newRow.getElementsByTagName("div")[0].removeAttribute("id")
+    newRow.setAttribute("id", currentRow)
+    // newRow.getElementsByName("div")[1].setAttribute("class", "row");
+
+    // // newRow.row = appendChild(document.createElement("div"));
+    // newRow.row.getElementsByName("div")[1].setAttribute("class", "num");
+    newRow.getElementsByClassName("num")[0].innerHTML = count
+    
+    // newRow.row = appendChild(document.createElement("div"));
+    // newRow.row.getElementsByName("div")[2].setAttribute("class", "mname");
+    // newRow.getElementsByClassName("mname")[0].innerHTML = item;
+
+    // // newRow.row = appendChild(document.createElement("div"));
+    // newRow.row.getElementsByName("div")[3].setAttribute("class", "amount");
+    // newRow.row.getElementsByName("div")[3].innerHTML = "Total amount(Stacks, Blocks)";
+
+    // newRow.row = appendChild(document.createElement("div"));
+    // newRow.row.getElementsByName("div")[4].setAttribute("class", "del");
+    // newRow.row.getElementsByName("div")[4].appendChild(document.createElement("button"));
+    // newRow.row.getElementsByName("div")[4].child().first().setAttribute("class", "buttonDelete");
+    newRow.getElementsByClassName("buttonDelete")[0].removeAttribute("onclick");
+    newRow.getElementsByClassName("buttonDelete")[0].setAttribute("onclick", "deleteColumn(row" + count + ")");
+    // newRow.row.getElementsByName("div")[4].child().first().innerHTML = "Delete element";
+
+    main.appendChild(newRow);
     count++;
 }
 
 function deleteColumn(a){
+    if(a == 1 && count == 1){
+        alert("You cannot delete the only element from the list");
+        return;
+    }
     a.remove();
     saveData();
     othertabs = true;
@@ -54,3 +117,19 @@ function saveData(){
 // function loadData(){
 //     for(i = 0; i < rowData)
 // }
+
+//all block list
+function dataTransferItemList(){
+    const option = document.createElement("option")
+    blockSelector = document.createElement("select");
+    blockSelector.setAttribute("class", "itemName");
+    
+    blockname = ["dirt", "stone", "cobblestone", "oak_log", "oak_planks"];
+    for(i = 0; i < blockname.length; i++){
+        optiontemp = option;
+        optiontemp.setAttribute("value", blockname[i])
+        optiontemp.innerHTML = blockname[i];
+        blockSelector.appendChild(optiontemp);
+    }
+    return blockSelector;
+}
