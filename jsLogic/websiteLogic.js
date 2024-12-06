@@ -12,12 +12,12 @@ function initializeFirstMenu(){
     blockname = ["dirt", "stone", "cobblestone", "oak_log", "oak_planks"];
     for(i = 0; i < blockname.length; i++){
         itemId = "item" + blockname[i].charAt(0).toUpperCase() + blockname[i].slice(1);
-        firstMenu.appendChild(document.createElement("select"));
-        firstMenu.getElementsByTagName("select")[i].setAttribute("id", itemId);
-        firstMenu.getElementsByTagName("select")[i].setAttribute("value", blockname[i]);
-        firstMenu.getElementsByTagName("select")[i].innerHTML = blockname[i];
+        firstMenu.appendChild(document.createElement("option"));
+        firstMenu.getElementsByTagName("option")[i].setAttribute("id", itemId);
+        firstMenu.getElementsByTagName("option")[i].setAttribute("value", blockname[i]);
+        firstMenu.getElementsByTagName("option")[i].innerHTML = blockname[i];
         if(i == 0){
-            firstMenu.getElementsByTagName("select")[i].setAttribute("selected", "");
+            firstMenu.getElementsByTagName("option")[i].setAttribute("selected", "");
         }
     //     optiontemp = option;
     //     optiontemp.setAttribute("value", blockname[i])
