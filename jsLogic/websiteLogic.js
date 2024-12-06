@@ -19,11 +19,6 @@ function initializeFirstMenu(){
         if(i == 0){
             firstMenu.getElementsByTagName("option")[i].setAttribute("selected", "");
         }
-    //     optiontemp = option;
-    //     optiontemp.setAttribute("value", blockname[i])
-    //     optiontemp.innerHTML = blockname[i];
-    //     blockSelector.appendChild(optiontemp);
-    // 
     }
     document.getElementById("firstRow").remove();
     document.getElementsByClassName("mname")[1].appendChild(firstMenu);
@@ -32,54 +27,23 @@ function initializeFirstMenu(){
 function addNewColumn(){
     oldRow = document.getElementById("row1");
     newRow = oldRow.cloneNode(true);
-    // console.log(newRow)
-
-
-    // item = dataTransferItemList();
-    // console.log(count);
     currentRow = "row" + count;
-    // console.log(currentRow);
 
-    // fragment = document.createDocumentFragment();
-    // newRow = fragment.appendChild(document.createElement("div"));
-    // newRow.getElementsByTagName("div")[0].removeAttribute("id")
     newRow.setAttribute("id", currentRow)
-    // newRow.getElementsByName("div")[1].setAttribute("class", "row");
-
-    // // newRow.row = appendChild(document.createElement("div"));
-    // newRow.row.getElementsByName("div")[1].setAttribute("class", "num");
     newRow.getElementsByClassName("num")[0].innerHTML = count
-    
-    // newRow.row = appendChild(document.createElement("div"));
-    // newRow.row.getElementsByName("div")[2].setAttribute("class", "mname");
-    // newRow.getElementsByClassName("mname")[0].innerHTML = item;
-
-    // // newRow.row = appendChild(document.createElement("div"));
-    // newRow.row.getElementsByName("div")[3].setAttribute("class", "amount");
-    // newRow.row.getElementsByName("div")[3].innerHTML = "Total amount(Stacks, Blocks)";
-
-    // newRow.row = appendChild(document.createElement("div"));
-    // newRow.row.getElementsByName("div")[4].setAttribute("class", "del");
-    // newRow.row.getElementsByName("div")[4].appendChild(document.createElement("button"));
-    // newRow.row.getElementsByName("div")[4].child().first().setAttribute("class", "buttonDelete");
     newRow.getElementsByClassName("buttonDelete")[0].removeAttribute("onclick");
     newRow.getElementsByClassName("buttonDelete")[0].setAttribute("onclick", "deleteColumn(row" + count + ")");
-    // newRow.row.getElementsByName("div")[4].child().first().innerHTML = "Delete element";
-
+    
     main.appendChild(newRow);
     count++;
 }
 
 function deleteColumn(a){
-    console.log(a == row1);
-    console.log(count == 2);
     if(a == row1 && count == 2){
         alert("You cannot delete last element from the list");
     }
     else{
-        console.log(count);
         a.remove();
-        saveData();
         othertabs = true;
         tabindex = 1;
         tabiterator = 1;
@@ -110,30 +74,4 @@ function deleteColumn(a){
             }
         }
     }
-}
-
-function saveData(){
-    rowData = document.getElementsByClassName("itemName");
-
-    // for(i = )
-}
-
-// function loadData(){
-//     for(i = 0; i < rowData)
-// }
-
-//all block list
-function dataTransferItemList(){
-    const option = document.createElement("option")
-    blockSelector = document.createElement("select");
-    blockSelector.setAttribute("class", "itemName");
-    
-    blockname = ["dirt", "stone", "cobblestone", "oak_log", "oak_planks"];
-    for(i = 0; i < blockname.length; i++){
-        optiontemp = option;
-        optiontemp.setAttribute("value", blockname[i])
-        optiontemp.innerHTML = blockname[i];
-        blockSelector.appendChild(optiontemp);
-    }
-    return blockSelector;
 }
