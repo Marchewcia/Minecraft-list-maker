@@ -71,39 +71,43 @@ function addNewColumn(){
 }
 
 function deleteColumn(a){
-    if(a == 1 && count == 1){
-        alert("You cannot delete the only element from the list");
-        return;
+    console.log(a == row1);
+    console.log(count == 2);
+    if(a == row1 && count == 2){
+        alert("You cannot delete last element from the list");
     }
-    a.remove();
-    saveData();
-    othertabs = true;
-    tabindex = 1;
-    tabiterator = 1;
-    while(othertabs){
-        rowcurrent = document.getElementById("row" + tabindex);
-        //check if there are any other tabs
-        if(tabindex > count){
-            othertabs = false;
-            count = tabiterator;
-            return;
-        }
-        //skip non existent rows
-        else if(rowcurrent == null){
-            tabindex++;
-        }
-        else{
-            rowcurrent.id = "row" + tabiterator;
-            numberChange = rowcurrent.getElementsByClassName("num");
-            numberChange = numberChange[0];
-            numberChange.innerHTML = tabiterator;
-            delColumn = rowcurrent.getElementsByClassName("del");
-            delColumn = delColumn[0];
-            delColumn = delColumn.getElementsByClassName("buttonDelete");
-            delColumn = delColumn[0];
-            delColumn.setAttribute("onclick", "deleteColumn(row" + tabiterator + ")");
-            tabindex++;
-            tabiterator++;
+    else{
+        console.log(count);
+        a.remove();
+        saveData();
+        othertabs = true;
+        tabindex = 1;
+        tabiterator = 1;
+        while(othertabs){
+            rowcurrent = document.getElementById("row" + tabindex);
+            //check if there are any other tabs
+            if(tabindex > count){
+                othertabs = false;
+                count = tabiterator;
+                return;
+            }
+            //skip non existent rows
+            else if(rowcurrent == null){
+                tabindex++;
+            }
+            else{
+                rowcurrent.id = "row" + tabiterator;
+                numberChange = rowcurrent.getElementsByClassName("num");
+                numberChange = numberChange[0];
+                numberChange.innerHTML = tabiterator;
+                delColumn = rowcurrent.getElementsByClassName("del");
+                delColumn = delColumn[0];
+                delColumn = delColumn.getElementsByClassName("buttonDelete");
+                delColumn = delColumn[0];
+                delColumn.setAttribute("onclick", "deleteColumn(row" + tabiterator + ")");
+                tabindex++;
+                tabiterator++;
+            }
         }
     }
 }
