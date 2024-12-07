@@ -2,6 +2,8 @@
     --backgroud: rgb(75, 7, 75);
     --border: rgb(136, 15, 136);
     --font: rgb(190, 180, 33);
+    --delHover: rgb(255, 30, 40);
+    --buttonAndInputHover: rgb(48, 5, 48);
 }
 
 #nav {
@@ -86,7 +88,15 @@ option, select {
     border: none;
 }
 
-.amount button{
+.amount button {
     height: 100%;
     width: 49%;
+}
+
+.buttonDelete:hover {
+    background-color: var(--delHover);
+}
+
+button:hover, select:hover {
+    background-color: var(--buttonAndInputHover);
 }
