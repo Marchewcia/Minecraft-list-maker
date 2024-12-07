@@ -13,7 +13,6 @@ function initializeFirstMenu(){
     for(i = 0; i < blockname.length; i++){
         itemId = "item" + blockname[i].charAt(0).toUpperCase() + blockname[i].slice(1);
         firstMenu.appendChild(document.createElement("option"));
-        firstMenu.getElementsByTagName("option")[i].setAttribute("id", itemId);
         firstMenu.getElementsByTagName("option")[i].setAttribute("value", blockname[i]);
         firstMenu.getElementsByTagName("option")[i].innerHTML = blockname[i];
         if(i == 0){
