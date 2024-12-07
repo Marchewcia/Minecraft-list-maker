@@ -7,11 +7,9 @@ function loadOrNew(){
 }
 
 function initializeFirstMenu(){
-    tempFirstMenu = document.getElementById("firstRow");
-    firstMenu = tempFirstMenu.cloneNode(false);
+    firstMenu = document.createElement("select");
     blockname = ["dirt", "stone", "cobblestone", "oak_log", "oak_planks"];
     for(i = 0; i < blockname.length; i++){
-        itemId = "item" + blockname[i].charAt(0).toUpperCase() + blockname[i].slice(1);
         firstMenu.appendChild(document.createElement("option"));
         firstMenu.getElementsByTagName("option")[i].setAttribute("value", blockname[i]);
         firstMenu.getElementsByTagName("option")[i].innerHTML = blockname[i];
@@ -19,7 +17,6 @@ function initializeFirstMenu(){
             firstMenu.getElementsByTagName("option")[i].setAttribute("selected", "");
         }
     }
-    document.getElementById("firstRow").remove();
     document.getElementsByClassName("mname")[1].appendChild(firstMenu);
 }
 
