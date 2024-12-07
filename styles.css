@@ -85,3 +85,8 @@ option, select {
     color: var(--font);
     border: none;
 }
+
+.amount button{
+    height: 100%;
+    width: 49%;
+}
