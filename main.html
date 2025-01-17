@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Main Page- MC list maker</title>
+        <title>MC item list maker</title>
 
         <link rel="stylesheet" href="styles.css">
 
@@ -11,41 +11,50 @@
     </head>
     <body onload="loadOrNew()">
         <div id="nav">
-            
+            <div id="title">
+                Minecraft Item List Maker
+            </div>
+            <div id="options">
+                <button class="optionButtons" onclick="addNewColumn()">Add new item</button>
+                <button class="optionButtons">Save to JSON</button>
+                <button class="optionButtons">Load from JSON</button>
+                <button class="optionButtons">Export to image</button>
+                <button class="optionButtons">Export to txt</button>
+            </div>        
         </div>
-        <div id="main">
-            <div class="row">
-                <div class="num">
-                    No.
+
+        <div id="mainWrapper">
+            <div id="main">
+                <div class="row">
+                    <div class="num">
+                        No.
+                    </div>
+                    <div class="mname">
+                        Block/Item name
+                    </div>
+                    <div class="amount">
+                        Total amount(Stacks, Blocks)
+                    </div>
+                    <div class="del">
+                        Delete item
+                    </div>
                 </div>
-                <div class="mname">
-                    Block/Item name
-                </div>
-                <div class="amount">
-                    Total amount(Stacks, Blocks)
-                </div>
-                <div class="del">
-                    Delete item
+                <div class="row" id="row1">
+                    <div class="num">1</div>
+                    <div class="mname"></div>
+                    <div class="amount" id="idBlocks1">
+                        <button id="total" onclick="setTotalAmount(1)">
+                            0 Total Items
+                        </button>
+                        <button id="stacks" onclick="setStackAmount(1)">
+                            0 Stacks 0 Items
+                        </button>
+                    </div>
+                    <div class="del">
+                        <button class="buttonDelete" onclick="deleteColumn(row1)">Delete element</button>
+                    </div>
                 </div>
             </div>
-            <div class="row" id="row1">
-                <div class="num">1</div>
-                <div class="mname"></div>
-                <div class="amount" id="idBlocks1">
-                    <button id="total" onclick="setTotalAmount(1)">
-                        0 Total Items
-                    </button>
-                    <button id="stacks" onclick="setStackAmount(1)">
-                        0 Stacks 0 Items
-                    </button>
-                </div>
-                <div class="del">
-                    <button class="buttonDelete" onclick="deleteColumn(row1)">Delete element</button>
-                </div>
-            </div>
-        </div>
-        <div id="addcontainer">
-            <button id="add" onclick="addNewColumn()">Add new item</button>
         </div>
     </body>
 </html>

@@ -1,3 +1,4 @@
+/*root and body*/
 :root {
     --backgroud: rgb(75, 7, 75);
     --border: rgb(136, 15, 136);
@@ -6,18 +7,65 @@
     --buttonAndInputHover: rgb(48, 5, 48);
 }
 
+body {
+    background-color: var(--backgroud);
+    color: var(--font);
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Navigation bar and content */
 #nav {
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    position: fixed;
     width: 100%;
-    height: 5%;
+    height: fit-content;
+    background-color: var(--backgroud);
+    border-bottom: 3px solid var(--border);
+}
+
+#title {
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+}
+
+#options {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.optionButtons {
+    width: 10%;
+    height: 11%;
+    font-size: larger;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: solid var(--border) 3px;
+}
+
+
+/* main display: main table */
+#mainWrapper {
+    margin-top: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 }
 
 #main {
     align-items: center;
-    align-self: center;
     display: flex;
     flex-direction: column;
     height: max-content;
-    margin-left: 15%;
     border-top: solid var(--border) 3px;
     border-left: solid var(--border) 3px;
     border-right: solid var(--border) 3px;
@@ -33,59 +81,19 @@
     width: 100%;
 }
 
-#add {
-    width: 20%;
-    height:11%;
-    font-size: larger;
-    margin-top: 1%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    border: solid var(--border) 3px;
-}
-
-#addcontainer {
-    display: flex;
-    justify-content: center;
-}
-
-.num, .mname, .amount {
-    border-right: solid var(--border) 3px;
-}
-
 .num {
     width: 10%;
+    border-right: solid var(--border) 3px;
 }
 
 .mname {
     width: 44%;
+    border-right: solid var(--border) 3px;
 }
 
 .amount {
     width: 35%;
-}
-
-.del {
-    width: 12.8%;
-}
-
-body, button{
-    background-color: var(--backgroud);
-    color: var(--font);
-    border: none;
-}
-
-.buttonDelete {
-    width: 100%;
-    height: 100%;
-}
-
-option, select {
-    width: 100%;
-    height: 100%;
-    background-color: var(--backgroud);
-    color: var(--font);
-    border: none;
+    border-right: solid var(--border) 3px;
 }
 
 .amount button {
@@ -93,10 +101,37 @@ option, select {
     width: 49%;
 }
 
+.del {
+    width: 12.8%;
+}
+
+.buttonDelete {
+    width: 100%;
+    height: 100%;
+}
+
 .buttonDelete:hover {
     background-color: var(--delHover);
 }
 
+
+/* Global (all tags) - buttons */
+button {
+    background-color: var(--backgroud);
+    color: var(--font);
+    border: none;
+}
+
 button:hover, select:hover {
     background-color: var(--buttonAndInputHover);
+}
+
+
+/* Global (all tags) - other */
+option, select {
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgroud);
+    color: var(--font);
+    border: none;
 }
