@@ -7,7 +7,8 @@
 
         <link rel="stylesheet" href="styles.css">
 
-        <script src="jslogic/websiteLogic.js"></script>
+        <script src="jslogic/rowManagment.js"></script>
+        <script src="jsLogic/scraping.js"></script>
     </head>
     <body onload="loadOrNew()">
         <div id="nav">
@@ -16,7 +17,7 @@
             </div>
             <div id="options">
                 <button class="optionButtons" onclick="addNewColumn()">Add new item</button>
-                <button class="optionButtons">Save to JSON</button>
+                <button class="optionButtons" onclick="scrapeData()">Save to JSON</button>
                 <button class="optionButtons">Load from JSON</button>
                 <button class="optionButtons">Export to image</button>
                 <button class="optionButtons">Export to txt</button>
