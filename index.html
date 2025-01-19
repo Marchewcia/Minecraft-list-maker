@@ -26,35 +26,37 @@
 
         <div id="mainWrapper">
             <table>
-                <tr>
-                    <th class="num">
-                        No.
-                    </th>
-                    <th class="mname">
-                        Block/Item name
-                    </th>
-                    <th class="amount">
-                        Total amount(Stacks, Blocks)
-                    </th>
-                    <th class="del">
-                        Delete item
-                    </th>
-                </div>
-                <tr id="row1">
-                    <td class="num">1</td>
-                    <td class="mname"></td>
-                    <td class="amount" id="idBlocks1">
-                        <button id="total" onclick="setTotalAmount(1)">
-                            0 Total Items
-                        </button>
-                        <button id="stacks" onclick="setStackAmount(1)">
-                            0 Stacks 0 Items
-                        </button>
-                    </td>
-                    <td class="del">
-                        <button class="buttonDelete" onclick="deleteColumn(row1)">Delete element</button>
-                    </td>
-                </div>
+                <tbody>
+                    <tr>
+                        <th class="num">
+                            No.
+                        </th>
+                        <th class="mname">
+                            Block/Item name
+                        </th>
+                        <th class="amount">
+                            Total amount(Stacks, Blocks)
+                        </th>
+                        <th class="del">
+                            Delete item
+                        </th>
+                    </div>
+                    <tr id="row1">
+                        <td class="num">1</td>
+                        <td class="mname"></td>
+                        <td class="amount" id="idBlocks1">
+                            <button id="total" onclick="setTotalAmount(1)">
+                                0 Total Items
+                            </button>
+                            <button id="stacks" onclick="setStackAmount(1)">
+                                0 Stacks 0 Items
+                            </button>
+                        </td>
+                        <td class="del">
+                            <button class="buttonDelete" onclick="deleteColumn(row1)">Delete element</button>
+                        </td>
+                    </div>
+                </tbody>
             </table>
         </div>
     </body>

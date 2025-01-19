@@ -42,7 +42,7 @@ function addNewColumn(){
     
     newRow.getElementsByClassName("buttonDelete")[0].setAttribute("onclick", "deleteColumn(row" + count + ")");
 
-    document.getElementsByTagName("table")[0].appendChild(newRow);
+    document.getElementsByTagName("tbody")[0].appendChild(newRow);
     count++;
 }
 
