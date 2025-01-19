@@ -29,6 +29,9 @@ function addNewColumn(){
     let newRow = oldRow.cloneNode(true);
     let currentRow = "row" + count;
 
+    const cells = newRow.getElementsByTagName("td");
+    console.log(cells, cells.length);
+
     newRow.setAttribute("id", currentRow);
 
     newRow.getElementsByClassName("num")[0].innerHTML = count;
