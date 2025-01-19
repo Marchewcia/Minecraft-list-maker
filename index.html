@@ -11,10 +11,10 @@
         <script src="jsLogic/scraping.js"></script>
     </head>
     <body onload="loadOrNew()">
-        <div id="nav">
-            <div id="title">
+        <nav>
+            <h1>
                 Minecraft Item List Maker
-            </div>
+            </h1>
             <div id="options">
                 <button class="optionButtons" onclick="addNewColumn()">Add new item</button>
                 <button class="optionButtons" onclick="scrapeData()">Save to JSON</button>
@@ -22,40 +22,40 @@
                 <button class="optionButtons">Export to image</button>
                 <button class="optionButtons">Export to txt</button>
             </div>        
-        </div>
+        </nav>
 
         <div id="mainWrapper">
-            <div id="main">
-                <div class="row">
-                    <div class="num">
+            <table>
+                <tr>
+                    <th class="num">
                         No.
-                    </div>
-                    <div class="mname">
+                    </th>
+                    <th class="mname">
                         Block/Item name
-                    </div>
-                    <div class="amount">
+                    </th>
+                    <th class="amount">
                         Total amount(Stacks, Blocks)
-                    </div>
-                    <div class="del">
+                    </th>
+                    <th class="del">
                         Delete item
-                    </div>
+                    </th>
                 </div>
-                <div class="row" id="row1">
-                    <div class="num">1</div>
-                    <div class="mname"></div>
-                    <div class="amount" id="idBlocks1">
+                <tr id="row1">
+                    <td class="num">1</td>
+                    <td class="mname"></td>
+                    <td class="amount" id="idBlocks1">
                         <button id="total" onclick="setTotalAmount(1)">
                             0 Total Items
                         </button>
                         <button id="stacks" onclick="setStackAmount(1)">
                             0 Stacks 0 Items
                         </button>
-                    </div>
-                    <div class="del">
+                    </td>
+                    <td class="del">
                         <button class="buttonDelete" onclick="deleteColumn(row1)">Delete element</button>
-                    </div>
+                    </td>
                 </div>
-            </div>
+            </table>
         </div>
     </body>
 </html>

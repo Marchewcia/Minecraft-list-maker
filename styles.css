@@ -17,7 +17,7 @@ body {
 
 
 /* Navigation bar and content */
-#nav {
+nav {
     top: 0%;
     left: 0%;
     right: 0%;
@@ -29,8 +29,7 @@ body {
     max-height: 10%;
 }
 
-#title {
-    font-size: xx-large;
+h1 {
     display: flex;
     justify-content: center;
 }
@@ -62,39 +61,43 @@ body {
 
 }
 
-#main {
+table {
     align-items: center;
     display: flex;
     flex-direction: column;
     height: max-content;
-    border-top: solid var(--border) 3px;
-    border-left: solid var(--border) 3px;
-    border-right: solid var(--border) 3px;
+    border: solid var(--border) 3px;
     width: 70%;
     text-align: center;
 }
 
-.row {
+tbody {
+    width: 100%;
+    height: 100%;
+}
+
+tr {
     display: flex;
     flex-direction: row;
-    border-bottom: solid var(--border) 3px;
     height: 30px;
     width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid var(--border) 2px;
 }
 
 .num {
     width: 10%;
-    border-right: solid var(--border) 3px;
 }
 
 .mname {
     width: 44%;
-    border-right: solid var(--border) 3px;
 }
 
 .amount {
     width: 35%;
-    border-right: solid var(--border) 3px;
 }
 
 .amount button {

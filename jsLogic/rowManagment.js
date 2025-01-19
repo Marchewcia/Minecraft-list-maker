@@ -33,7 +33,7 @@ function addNewColumn(){
 
     newRow.getElementsByClassName("num")[0].innerHTML = count;
     
-    newRow.getElementsByTagName("div")[2].setAttribute("id", "idBlocks" + count);
+    newRow.getElementsByTagName("td")[2].setAttribute("id", "idBlocks" + count);
     newRow.getElementsByTagName("button")[0].setAttribute("onclick", "setTotalAmount(" + count + ")");
     newRow.getElementsByTagName("button")[0].innerHTML = "0 Total Items";
 
@@ -42,7 +42,7 @@ function addNewColumn(){
     
     newRow.getElementsByClassName("buttonDelete")[0].setAttribute("onclick", "deleteColumn(row" + count + ")");
 
-    main.appendChild(newRow);
+    document.getElementsByTagName("table")[0].appendChild(newRow);
     count++;
 }
 
