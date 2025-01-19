@@ -1,3 +1,4 @@
+window.location.reload();
 let count = 2;
 
 function loadOrNew(){
