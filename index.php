@@ -14,7 +14,7 @@
         <script src="jsLogic/rowManagment.js"></script>
         <script src="jsLogic/scraping.js"></script>
     </head>
-    <body onload="loadOrNew()">
+    <body>
         <nav>
             <h1>
                 Minecraft Item List Maker

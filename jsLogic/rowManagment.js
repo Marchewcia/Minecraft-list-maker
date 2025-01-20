@@ -1,11 +1,5 @@
 let count = 2;
-
-function loadOrNew(){
-    input = true; //temp
-    if(input){//true:new
-        initializeFirstMenu();
-    }
-}
+initializeFirstMenu();
 
 function initializeFirstMenu(){
     let firstMenu = document.createElement("select");
