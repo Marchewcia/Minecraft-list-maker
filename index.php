@@ -7,6 +7,10 @@
 
         <link rel="stylesheet" href="styles.css">
 
+        <?php
+        header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
+        ?>
+
         <script src="jsLogic/rowManagment.js"></script>
         <script src="jsLogic/scraping.js"></script>
     </head>
