@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="styles.css">
 
         <?php
-        header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
+        header("Cache-Control: no-cache, must-revalidate");
         ?>
 
         <script src="jsLogic/rowManagment.js"></script>
