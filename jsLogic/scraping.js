@@ -11,6 +11,10 @@ function scrapeData(){
         j++;
     }
     scrapedData[0] = count;
+    for(let i = 1; i < count * 3; i++){
+        console.log(scrapedData[i]);
+    }
+
     console.log(scrapedData);
 }
 
