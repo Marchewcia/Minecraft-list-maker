@@ -3,8 +3,12 @@
 function scrapeData(){
     let scrapedData = [];
     let parent = document.getElementsByTagName("tbody")[0];
+    let j = 1;
     for(let i = 1; i < count; i++){
-        scrapedData[i] = parent.getElementsByTagName("tr")[i].innerHTML;
+        scrapedData[j] = parent.getElementsByTagName("tr")[i].getElementsByTagName("select")[0].innerHTML;
+        j++;
+        scrapedData[j] = parent.getElementsByTagName("tr")[i].getElementsByTagName("button")[0].innerText;
+        j++;
     }
     scrapedData[0] = count;
     console.log(scrapedData);
